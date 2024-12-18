@@ -1,25 +1,55 @@
 {
-  "name": "vuest-demo",
+  "name": "svuet",
   "version": "1.0.0",
   "type": "module",
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "description": "Help using VueJS in HTML",
+  "author": {
+    "name": "Huan Hoang"
+  },
+  "license": "MIT",
   "exports": {
     ".": "./dist/index.js"
   },
+  "keywords": [
+    "shopify",
+    "vue",
+    "theme",
+    "liquid",
+    "javascript",
+    "html",
+    "svuet",
+    "scss",
+    "sass",
+    "bundle"
+  ],
   "files": [
     "dist",
-    "bin"
+    "bin",
+    "docs",
+    "vite.config.ts",
+    "vite.style.config.ts"
   ],
-  "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "dev": "ts-node src/index.ts",
-    "test": "node dist/index.js"
+    "build": "tsc"
   },
   "bin": {
-    "vuest-demo": "./bin/vuest.js"
+    "svuet": "bin/svuet.js"
   },
+  "engines": {
+    "node": ">=18.20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dataforgedigital/svue-theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dataforgedigital/svue-theme/issues"
+  },
+  "homepage": "https://github.com/dataforgedigital/svue-theme#readme",
   "dependencies": {
+    "concurrently": "^9.1.0",
     "@shopify/cli": "^3.72.1",
     "@shopify/theme": "^3.58.2",
     "@types/node": "^22.10.2",
@@ -28,7 +58,6 @@
     "chalk": "^5.3.0",
     "sass": "^1.83.0",
     "sass-embedded": "^1.83.0",
-    "sass-loader": "^16.0.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2",
     "vite": "^6.0.3",

@@ -3,36 +3,37 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
-const vuestConfig = JSON.parse(process.env.__VUEST_CONFIG as string)
+// Parse the Svuet configuration from the environment variable
+const svuetConfig = JSON.parse(process.env.__SVUET_CONFIG as string)
 
-if (!vuestConfig) {
-  throw new Error('Vuest config not found');
+if (!svuetConfig) {
+  throw new Error('Svuet config not found');
 }
 
 export default defineConfig({
   plugins: [
-    vue(),
-    vueJsx(),
+    vue(), // Vue plugin for Vite
+    vueJsx(), // Vue JSX plugin for Vite
   ],
-  root: process.cwd(), // Thư mục gốc của project
+  root: process.cwd(), // Root directory of the project
   build: {
-    // Chỉ định thư mục đầu ra cho các file build
-    outDir: vuestConfig.build.outdir, // Thư mục output chính (tạo thư mục dist)
-    emptyOutDir: false,
-    minify: false,
-    // Cấu hình Rollup để chỉ định tên file và thư mục
+    // Specify the output directory for build files
+    outDir: svuetConfig.build.outdir, // Main output directory (creates dist folder)
+    emptyOutDir: false, // Do not empty the output directory before building
+    minify: false, // Do not minify the output files
+    // Configure Rollup to specify file names and directories
     rollupOptions: {
-      input: vuestConfig.build.javascript.input, // Đường dẫn file đầu vào
+      input: svuetConfig.build.javascript.input, // Path to the input file
       output: {
-        entryFileNames: `${vuestConfig.build.prefix}${vuestConfig.build.javascript.output}`, // Đặt tên cho file đầu ra là script.js
-        format: 'iife', // Định dạng file đầu ra, có thể là 'es', 'cjs', 'iife'
+        entryFileNames: `${svuetConfig.build.prefix}${svuetConfig.build.javascript.output}`, // Set the output file name to script.js
+        format: 'iife', // Output file format, can be 'es', 'cjs', 'iife'
       },
     },
   },
   resolve: {
     alias: {
-      vue: 'vue/dist/vue.esm-bundler.js',
-      ...(vuestConfig.build.javascript.alias ?? {})
+      vue: 'vue/dist/vue.esm-bundler.js', // Alias for Vue
+      ...(svuetConfig.build.javascript.alias ?? {}) // Additional aliases from the configuration
     },
   },
 });
