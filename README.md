@@ -373,3 +373,8 @@ About slots using VueJS syntax
 ## [Demo page]() (in development)
 ## [Demo source code]() (in development)
 
+# 💬 Contributions & Feedback
+I deeply value contributions and feedback from the community to make this package even better. If you have ideas, issues to discuss, or improvements, feel free to create an issue or submit a pull request. Every contribution is greatly appreciated!
+
+# ⭐ Show Your Support
+If you find this package helpful, please consider giving it a ⭐ on GitHub. It’s a small gesture that motivates me to keep creating and improving open-source projects. Thank you so much! ❤️
