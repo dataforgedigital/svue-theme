@@ -1,8 +1,8 @@
 import { ElementInput } from '../types/element';
 import { defineComponent, h, Slot, VNode, type Component, type DefineComponent } from 'vue';
-import Storage from './Storage';
-import Element from './definitions/Element';
-import { Converter } from './types/converter';
+import Storage from '../storage/Storage';
+import Element from '../definitions/Element';
+import { Converter } from '../types/converter';
 
 export const isPropName = (name: string, ns: string = 'v', directive: string = 'prop', tempModifier: string = '#temp') => {
   return (new RegExp(`^${ns}-${directive}:([\\w_-]+)(\\.${tempModifier})?$`)).test(name)

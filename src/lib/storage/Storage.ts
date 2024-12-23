@@ -1,6 +1,6 @@
 import { reactive } from "vue";
-import { toCamelCase } from "./utils";
-import { Converter } from "./types/converter";
+import { toCamelCase } from "../utils";
+import { Converter } from "../types/converter";
 
 export default class Storage {
   private $data = reactive<Record<string, unknown>>({});
