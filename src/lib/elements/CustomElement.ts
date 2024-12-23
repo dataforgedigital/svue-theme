@@ -96,7 +96,7 @@ class CustomElement extends HTMLElement {
     // TODO: will be implemented provider handling
     const props = this.$props.all();
 
-    const assignedPropNames = this.__mergePropNames([], props, this.$props);
+    const assignedPropNames = this.__mergePropNames(propNames, element.props ?? {}, this.$props);
 
     const SlotPropHandlingComponent = defineSlotPropHandlingComponent(
       element.original,
