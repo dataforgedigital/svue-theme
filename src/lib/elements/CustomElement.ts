@@ -1,14 +1,7 @@
-import { createApp, type Component, type DefineComponent, type Plugin } from 'vue';
+import { createApp, type Component, type DefineComponent } from 'vue';
 import { defineOriginalPropHandlingComponent, defineSlotPropHandlingComponent, isPropName, toCamelCase, toPascalCase, toPropName } from '../utils';
 import Storage from '../storage/Storage';
-import Element from '../definitions/Element';
-
-interface Instance {
-  element: Element;
-  components: Map<string, Component | DefineComponent>;
-  plugins: Set<{ plugin: Plugin; options: unknown }>;
-  providers: Set<Component | DefineComponent>;
-}
+import { Instance } from '../types/instance';
 
 class CustomElement extends HTMLElement {
   private readonly NS = 'v';

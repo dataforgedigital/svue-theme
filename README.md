@@ -301,6 +301,14 @@ bootstrap((app) => {
 
 ```
 
+- Change prop value outside vue app
+
+```javascript
+const helloWorldElm = document.querySelector('hello-world')
+
+// Only change the value of previously defined props, trying to change an undeclared prop will cause an error
+helloWorldElm.$props.pageTitle = "New Prop Value"
+```
 
 ### Plugin
 
